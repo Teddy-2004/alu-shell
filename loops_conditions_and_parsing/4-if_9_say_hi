@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# print best school ten times but in ninth place inserting Hi
+i=1
+while [ $i -le 10 ]
+do
+	if [ $i -eq 10 ]
+	then
+		echo "Hi"
+	fi
+	echo "Best School"
+	i=$((i+1))
+done
