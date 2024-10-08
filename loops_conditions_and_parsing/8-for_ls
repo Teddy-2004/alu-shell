@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#display the content of current directory
+for file in *
+do
+	if [[ -f "$file" ]]
+	then
+		echo "$file" | cut -d'-' -f2-
+	fi
+done 
