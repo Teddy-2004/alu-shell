@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 #display all currently running process
-ps aux
+ps -e -o pid,ppid,user,%cpu,%mem,tty,stat,start,time,cmd --forest
+pstree -p
