@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this script diplays its own pid
+ps aux | pgrep -f 0-what-is-my-pid 
