@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-# Displays "To infinity and beyond" indefinitely with I am invincible
+# Function to handle SIGTERM
+trap 'echo "I am invincible!!!"' SIGTERM
 
+# Infinite loop with sleep
 while true
 do
-  echo "To infinity and beyond"
-  sleep 2
-  trap 'echo "I am invincible"' SIGTERM 
+    echo "To infinity and beyond"
+    sleep 2
 done
