@@ -2,6 +2,6 @@
 # bash script along side with bash
 for pid in /proc/[0-9]*; do
   if grep -q bash "$pid/comm" 2>/dev/null; then
-    echo "$(basename $pid) bash"
+    echo "$(basename "$pid") bash"
   fi
 done
