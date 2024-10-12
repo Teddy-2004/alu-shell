@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Get the PID of the running 4-to_infinity_and_beyond process
+PID=$(pgrep -f 4-to_infinity_and_beyond)
+
+# If PID is found
+if [ -n "$PID" ]; then
+    # Send the termination signal using /proc
+    echo "1" > /proc/"$PID"/oom_score_adj
+else
+    echo "No 4-to_infinity_and_beyond process found."
+fi
