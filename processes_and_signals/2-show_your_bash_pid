@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# display PID of bash process
+# shellcheck disable=2009
+ps aux | grep "[b]ash"
