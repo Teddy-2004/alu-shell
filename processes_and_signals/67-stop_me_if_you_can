@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Get the PID of the running 7-highlander process
+PID=$(pgrep -f 7-highlander)
+
+# If PID is found
+if [ -n "$PID" ]; then
+    # Send SIGTERM signal to the process
+    kill -SIGTERM "$PID"
+    echo "Process 7-highlander (PID: $PID) has been signaled."
+else
+    echo "No 7-highlander process found."
+fi
