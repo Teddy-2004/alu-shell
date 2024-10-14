@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
 # has done everything
+echo $$ > /var/run/myscript.pid
 
-terminator() {
-  rm /var/run/holbertonscript.pid
-  exit
-}
+# Function to handle SIGTERM and SIGQUIT
+trap 'echo "I hate the kill command"; rm -f /var/run/myscript.pid; exit' SIGTERM SIGQUIT
 
-echo "$$" > /var/run/holbertonscript.pid
+# Function to handle SIGINT (Ctrl+C)
+trap 'echo "Y U no love me?!"' SIGINT
 
+# Infinite loop
 while true
 do
-  echo "To infinity and beyond"
-  sleep 2
-  trap 'echo "Y U no love me?!"' SIGINT
-  trap 'echo "I hate the kill command" && terminator' SIGTERM
-  trap 'terminator' SIGQUIT
+    echo "To infinity and beyond"
+    sleep 2
 done
